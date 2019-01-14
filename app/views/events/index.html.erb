@@ -1,0 +1,11 @@
+<h1>All Events</h1>
+
+<ul>
+  <li>
+    <%= @events.each do |e| %>
+        <%= e.description %>
+        <%= e.user.name %>
+    <% end %>
+  </li>
+</ul>
+
