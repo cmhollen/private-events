@@ -1,8 +1,9 @@
 <h1>Hi, <%= @user.name %></h1>
 
 <h3>Events</h3>
+
 <ul>
-  <%= @user.attended_events.each do |a| %>
+  <% @user.attended_events.each do |a| %>
     <li>
       <%= a.description %>
     </li>

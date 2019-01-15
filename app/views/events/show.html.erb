@@ -1,4 +1,12 @@
 
 <h1><%= @event.description %></h1>
 <h3>Created by: <%= @event.creator.name %></h3>
-<p>Attendees: <%= @event.attendees.name %></p>
+<h4><%= link_to "Join", event_path(@event), method: :patch %></h4>
+<p>Attendees: </p>
+<ul>
+<% @event.attendees.each do |n| %>
+    <li>
+      <%= n.name %>
+    </li>
+<% end %>
+</ul>
