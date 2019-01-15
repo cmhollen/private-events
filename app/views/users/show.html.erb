@@ -1,11 +1,21 @@
 <h1>Hi, <%= @user.name %></h1>
 
-<h3>Events</h3>
+<h3>Upcoming Events</h3>
 
 <ul>
-  <% @user.attended_events.each do |a| %>
+  <% @upcoming_events.each do |u| %>
     <li>
-      <%= a.description %>
+      <%= u.description %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Previous Events</h3>
+
+<ul>
+  <% @prev_events.each do |p| %>
+    <li>
+      <%= p.description %>
     </li>
   <% end %>
 </ul>

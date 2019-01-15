@@ -1,5 +1,6 @@
 
 <h1><%= @event.description %></h1>
+<h1>On: <%= @event.date %></h1>
 <h3>Created by: <%= @event.creator.name %></h3>
 <h4><%= link_to "Join", event_path(@event), method: :patch %></h4>
 <p>Attendees: </p>

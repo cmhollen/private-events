@@ -15,11 +15,26 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @upcoming_events = upcoming_events(@user)
+    @prev_events = previous_events(@user)
   end
+
+
+  
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email)
   end
+  
+  def upcoming_events(user)
+    user.attended_events.where("date > ?", Date.current)
+  end
+
+  def previous_events(user)
+    user.attended_events.where("date < ?", Date.current)
+  end
+
+  
 end
